@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scary Movie: Misión Adriana</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:
+    linear-gradient(rgba(0,0,0,.75),
+    rgba(0,0,0,.85)),
+    url('scarymovie.jpg');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:white;
+    font-family:Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+h1{
+    font-size:4rem;
+    color:#ff2b2b;
+    text-shadow:0 0 20px red;
+    animation:parpadeo 2s infinite;
+}
+
+@keyframes parpadeo{
+    0%,100%{opacity:1}
+    50%{opacity:.6}
+}
+
+.subtitle{
+    margin-top:20px;
+    font-size:1.4rem;
+    color:#ddd;
+}
+
+.warning{
+    margin-top:30px;
+    max-width:700px;
+    background:#111;
+    border:2px solid red;
+    padding:25px;
+    border-radius:15px;
+}
+
+.btn{
+    margin-top:40px;
+    background:#ff2b2b;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:40px;
+    font-size:1.2rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+.hidden{
+    display:none;
+}
+
+.section{
+    padding:80px 25px;
+    text-align:center;
+}
+
+.countdown{
+    font-size:2rem;
+    color:#ffd700;
+    margin-top:20px;
+}
+
+.final-card{
+    max-width:800px;
+    margin:auto;
+    background:#111;
+    border-radius:20px;
+    padding:40px;
+    border:2px solid #ff2b2b;
+}
+
+.heart{
+    font-size:60px;
+    animation:heartbeat 1s infinite;
+}
+
+@keyframes heartbeat{
+    50%{transform:scale(1.2);}
+}
+
+.survivors{
+    margin-top:30px;
+    font-size:1.4rem;
+    color:#ffd700;
+}
+
+.message{
+    margin-top:25px;
+    line-height:1.8;
+    font-size:1.15rem;
+}
+
+footer{
+    padding:40px;
+    text-align:center;
+    color:#888;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1>SCARY MOVIE</h1>
+
+<h2 style="color:#ffd700;">
+❤️ Adriana, ¿aceptas esta misión conmigo? ❤️
+</h2> p class="subtitle">
+Una invitación clasificada...
+</p>
+
+<div class="warning">
+
+<h2>⚠️ Expediente Confidencial ⚠️</h2>
+
+<br>
+
+<p>
+La señorita <strong>Adriana</strong> ha sido seleccionada para una misión
+de alto riesgo.
+</p>
+
+<br>
+
+<p>
+Amenazas detectadas:
+</p>
+
+<br>
+
+<p>🔪 Asesinos incompetentes</p>
+<p>👻 Fantasmas ridículos</p>
+<p>😂 Ataques severos de risa</p>
+<p>❤️ Posible exceso de amor</p>
+
+</div>
+
+<button class="btn" onclick="mostrarMision()">
+Abrir Expediente
+</button>
+
+</section>
+
+<section id="mision" class="section hidden">
+
+<h2>🎬 MISIÓN DE SUPERVIVENCIA</h2>
+
+<br>
+
+<p>
+Los análisis indican que tus probabilidades de supervivencia aumentan
+si estás acompañada por:
+</p>
+
+<br>
+
+<h1 style="font-size:3rem;">Josué ❤️</h1>
+
+<br>
+
+<p>
+Por lo tanto, quedas oficialmente invitada
+a una noche de Scary Movie.
+</p>
+
+<p>
+Objetivo principal:
+Reírnos juntos hasta que nos duela el estómago.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>⏳ Cuenta Regresiva Para La Cita</h2>
+
+<div id="countdown" class="countdown"></div>
+
+</section>
+
+<section class="section">
+
+<div class="final-card">
+
+<div class="heart">❤️</div>
+
+<h2>Mensaje Final</h2>
+
+<div class="message">
+
+Monita,
+
+entre monstruos, fantasmas y asesinos torpes,
+hay algo que me gusta más que cualquier película:
+
+pasar tiempo contigo.
+
+Por eso quiero invitarte oficialmente
+a compartir esta aventura conmigo.
+
+Prometo protegerte de todos los sustos...
+excepto de los que yo mismo provoque
+cuando aparezca una escena inesperada. 😏
+
+Y si sobrevivimos a la película,
+la recompensa será una noche llena de risas,
+momentos bonitos y recuerdos contigo.
+
+</div>
+
+<div class="survivors">
+
+🏆 SUPERVIVIENTES OFICIALES 🏆
+
+<br><br>
+
+❤️ Adriana + Josué ❤️
+
+</div>
+
+<br>
+
+<button class="btn" onclick="aceptar()">
+
+❤️ Sí, acepto la cita ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<footer>
+Scary Movie: Edición monita ❤️
+</footer>
+
+<script>
+
+function mostrarMision(){
+    document.getElementById("mision")
+    .classList.remove("hidden");
+
+    document.getElementById("mision")
+    .scrollIntoView({behavior:"smooth"});
+}
+
+function aceptar(){
+alert(
+"❤️ Adriana ❤️\n\nMisión aceptada.\n\nAhora queda oficialmente programada una noche de Scary Movie junto a Josué.\n\nPrepárate para reír, asustarte y recibir mucho amor. 🎬❤️"
+);
+}
+
+    alert(
+"🎉 MISIÓN ACEPTADA 🎉\n\nAhora solo queda sobrevivir a Scary Movie junto a mi ❤️"
+    );
+}
+
+const fechaCita = new Date("2026-07-11 00:00:00").getTime();
+
+const timer = setInterval(function(){
+
+const ahora = new Date().getTime();
+
+const distancia = fechaCita - ahora;
+
+const dias = Math.floor(distancia/(1000*60*60*24));
+const horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+const minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
+const segundos = Math.floor((distancia%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML =
+dias + " días " +
+horas + " horas " +
+minutos + " min " +
+segundos + " seg";
+
+},1000);
+
+</script>
+
+<section class="section">
+
+<h2 style="color:#ffd700;">
+⭐ Mensaje Secreto ⭐
+</h2>
+
+<p style="max-width:700px;margin:auto;line-height:1.8;">
+Entre todas las personas del mundo,
+eres la única con la que quiero compartir
+las películas más tontas,
+las risas más fuertes
+y los momentos más especiales.
+
+Gracias por existir, Adriana. ❤️
+
+<br><br>
+
+Con cariño,
+
+<br><br>
+
+❤️ Josué ❤️
+</p>
+
+</section>
+
+</body>
+</html>
